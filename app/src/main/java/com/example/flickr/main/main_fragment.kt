@@ -29,11 +29,12 @@ class main_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val layout = inflater.inflate(R.layout.main_fragment_fragment, container, false)
+        val layout = inflater.inflate(R.layout.main_fragment, container, false)
         viewModel = ViewModelProviders.of(this).get(MainFragmentViewModel::class.java)
 
 
         val imageview = layout.findViewById<ImageView>(R.id.imageView2)
+        //val title = layout.findViewById<TextView>(R.id.title)
 
         viewModel.photo.observe(this, Observer {photo ->
             // la photo est prête

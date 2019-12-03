@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".main.main_fragment">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <ImageView
-                android:layout_width="297dp"
-                android:layout_height="237dp" tools:src="@tools:sample/avatars" android:id="@+id/imageView2"
-                tools:layout_editor_absoluteY="178dp" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp" tools:ignore="MissingConstraints"/>
-        <Button
-                android:text="NEXT"
-                android:layout_width="163dp"
-                android:layout_height="50dp" android:id="@+id/next" tools:layout_editor_absoluteY="584dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" tools:ignore="MissingConstraints"/>
-        <Button
-                android:text="ALL IMAGES"
-                android:layout_width="160dp"
-                android:layout_height="46dp" android:id="@+id/images" tools:layout_editor_absoluteY="669dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="8dp" android:layout_marginStart="8dp" tools:ignore="MissingConstraints"/>
+        <TextView
+                android:text="@{photo.title}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titre" android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="167dp" android:layout_marginStart="167dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="172dp"
+                android:layout_marginRight="172dp"/>
+    <ImageView
+            android:layout_width="297dp"
+            android:layout_height="237dp" tools:src="@tools:sample/avatars" android:id="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="169dp"
+            app:layout_constraintBottom_toTopOf="@+id/next" android:layout_marginTop="64dp"/>
+    <Button
+            android:text="NEXT"
+            android:layout_width="163dp"
+            android:layout_height="50dp" android:id="@+id/next"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginTop="100dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+    <Button
+            android:text="ALL IMAGES"
+            android:layout_width="160dp"
+            android:layout_height="46dp" android:id="@+id/images"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/next" android:layout_marginTop="8dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>

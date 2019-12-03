@@ -1,5 +1,7 @@
 package com.example.flickr.main
 
+import android.util.Log
+import android.util.LogPrinter
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;
 import com.example.flickr.model.Photo
@@ -15,17 +17,22 @@ class MainFragmentViewModel : ViewModel() {
 
 
     lateinit var  listePhoto : List<Photo>
-    val photo = MutableLiveData<Photo>()
+    val photo : MutableLiveData<Photo> = MutableLiveData()
+    lateinit var currentPhoto: Photo
+
 
     init {
         Repository().getPhotos(object :Callback<SearchResult> {
 
             override fun onFailure(call: Call<SearchResult>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
 
             override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+               listePhoto = response.body()!!.photos.photo
+                currentPhoto = listePhoto[0]
+                photo.value = currentPhoto
+
             }
 
         })
