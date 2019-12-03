@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.flickr.R
 import com.example.flickr.model.Photo
 import com.example.flickr.repository.Repository
+import kotlinx.android.synthetic.main.main_fragment.view.*
 
 
 class main_fragment : Fragment() {
@@ -34,12 +35,14 @@ class main_fragment : Fragment() {
 
 
         val imageview = layout.findViewById<ImageView>(R.id.imageView2)
-        //val title = layout.findViewById<TextView>(R.id.title)
+        val title = layout.findViewById<TextView>(R.id.title)
 
         viewModel.photo.observe(this, Observer {photo ->
             // la photo est prête
             val url = "https://farm" + photo.farm + ".staticflickr.com/" +
                     photo.server + "/" + photo.id+"_"+photo.secret + ".jpg"
+
+            title.text = photo.title
 
             Glide.with(activity!!).load(url).into(imageview)
         })
